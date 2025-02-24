@@ -42,10 +42,9 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - name: Build a Docker image
-        run: docker build -t shatch503/itas276-lab2:latest . > snyk.sarif
-      - name: Run Snyk to check Docker image for vulnerabilities
-        continue-on-error: true
+
         uses: snyk/actions/docker@master
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_APP_TOKEN }}
         with:
