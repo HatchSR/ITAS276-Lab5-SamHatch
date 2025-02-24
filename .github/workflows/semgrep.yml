@@ -45,3 +45,5 @@ jobs:
           # Generate a token from Semgrep AppSec Platform > Settings
           # and add it to your GitHub secrets.
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.1
