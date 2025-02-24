@@ -44,7 +44,7 @@ jobs:
       - name: Build a Docker image
         run: docker build -t your/image-to-test . > snyk.sarif
       - name: Run Snyk to check Docker image for vulnerabilities
-        continue-on-error: true
+        continue-on-error: false
         uses: snyk/actions/docker@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_APP_TOKEN }}
@@ -66,4 +66,4 @@ jobs:
       - name: Secret Scanning
         uses: trufflesecurity/trufflehog@main
         with:
-          extra_args: --results=verified,unknown
+          extra_args: --only-verified
