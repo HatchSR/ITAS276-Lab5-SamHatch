@@ -32,8 +32,8 @@ jobs:
       - name: Upload a semgrep sarif
         uses: actions/upload-artifact@v4.6.1
         with:
-          sarif_file: semgrep.sarif
-          if: always()
+          name: semgrep.sarif
+          path: .
       
           
   snyk:
