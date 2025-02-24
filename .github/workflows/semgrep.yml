@@ -47,3 +47,8 @@ jobs:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.6.1
+        with:
+          name: .
+
+    # A file, directory or wildcard pattern that describes what to upload
+    # Required.
